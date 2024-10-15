@@ -22,7 +22,7 @@ Dado a estar razones, podemos definir que el archivo se trata d euna base de dat
 
 ### 3. Armar el Modelo relacional de la base de datos dada.
 
-![modelo_relacional](imágenes/modelo_relacional.png)
+![modelo_relacional](Imagenes/modelo_relacional.png)
 
 
 
