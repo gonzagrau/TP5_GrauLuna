@@ -41,7 +41,97 @@ Analizando el resto de tablas, otra tabla mas que quizas necesite de normalizaci
 
 ### 1. Cuando se realizan consultas sobre la tabla paciente agrupando por ciudad los tiempos de respuesta son demasiado largos. Proponer mediante una query SQL una solución a este problema.
 
+```sql
+SELECT * FROM pacientes LIMIT 5
 ```
-query 1
-```
-(imagen del resultado de la query)
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nombre</th>
+      <th>fecha_nacimiento</th>
+      <th>id_sexo</th>
+      <th>numero</th>
+      <th>calle</th>
+      <th>ciudad</th>
+      <th>edad</th>
+    </tr>
+    <tr>
+      <th>id_paciente</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Luciana Gómez</td>
+      <td>1991-07-12</td>
+      <td>2</td>
+      <td>121</td>
+      <td>Avenida Las Heras</td>
+      <td>Bs Aires</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ricardo López</td>
+      <td>1984-03-22</td>
+      <td>1</td>
+      <td>434</td>
+      <td>Calle San Juan</td>
+      <td>Rosario</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Clara Fernández</td>
+      <td>1990-09-15</td>
+      <td>2</td>
+      <td>569</td>
+      <td>Calle San Juan</td>
+      <td>Rosario</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Marcos Ramírez</td>
+      <td>1983-11-10</td>
+      <td>1</td>
+      <td>250</td>
+      <td>Avenida Pellegrini</td>
+      <td>Santa Fe</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Julieta Rodríguez</td>
+      <td>1985-06-18</td>
+      <td>2</td>
+      <td>845</td>
+      <td>Calle Mitre</td>
+      <td>buenos aires</td>
+      <td>39</td>
+    </tr>
+  </tbody>
+</table>
+</div>
