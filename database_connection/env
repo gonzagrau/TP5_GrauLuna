@@ -1,0 +1,6 @@
+NAME='defaultdb'
+HOST='pg-infomed-itba-cdv.b.aivencloud.com'
+PORT=10184
+USERNAME_AIVEN='avnadmin'
+PASSWORD='AVNS_WDlM_Iu05W1HWc1EZcu'
+SSL_MODE='require'
