@@ -1,4 +1,4 @@
-/* 3. Obtener el nombre del paciente junto con la fecha de su última consulta y el
+/* 15. Obtener el nombre del paciente junto con la fecha de su última consulta y el
 diagnóstico asociado.*/
 
 CREATE TABLE ultima_consulta AS
