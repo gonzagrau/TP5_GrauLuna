@@ -73,20 +73,7 @@ SELECT m.nombre, m.matricula, e.nombre
   WHERE e.id_especialidad = 4;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -111,7 +98,7 @@ SELECT m.nombre, m.matricula, e.nombre
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **5. Puede pasar que haya inconsistencias en la forma en la que están escritos los nombres de las ciudades, ¿cómo se corrige esto? Agregar la query correspondiente.**
 
