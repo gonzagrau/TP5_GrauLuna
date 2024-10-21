@@ -19,6 +19,7 @@ Dado a estar razones, podemos definir que el archivo se trata d euna base de dat
 
 ### 2. Armar el diagrama entidad-relación de la base de datos dada. 
 
+![diagrama_db](Imagenes/diagrama_db.jpg)
 
 ### 3. Armar el Modelo relacional de la base de datos dada.
 
