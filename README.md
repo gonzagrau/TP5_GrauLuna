@@ -13,6 +13,6 @@ Para asegurar una correcta sincronización y gestión de versiones, decidimos ho
 En la carpeta `database_connection` del repositorio, se encuentran los archivos de Python y jupyter notebook utilizados para conectarnos a la base y realizar las queries SQL / DML correspondientes a las consignas del punto 2. En la carpeta `Ejercicio2` se encuentran los scripts utilizados en formato `.sql`.
 
 ## Reporting
-Para la actividad de reporting, nos conectamos desde *Looker studio* directamente a la base antes mencionada. Se enviarán las credenciales a la cátedra vía email en el día de la entrega.
+Para la actividad de reporting, nos conectamos desde *Looker studio* directamente a la base antes mencionada (razón por la que no hemos utilizado Google Sheets). Se enviarán las credenciales a la cátedra vía email en el día de la entrega.
 
 [Dashboard en looker studio](https://lookerstudio.google.com/reporting/c859cbee-0adf-4350-bc1f-f7a3cb9b67be)
