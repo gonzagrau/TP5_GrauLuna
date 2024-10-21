@@ -740,20 +740,7 @@ SELECT p.id_paciente, p.nombre, COUNT(r.id_receta) as cant_recetas
   GROUP BY p.id_paciente, p.nombre;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
