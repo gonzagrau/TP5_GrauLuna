@@ -134,20 +134,7 @@ SELECT nombre, calle || ' ' || numero AS direccion
   WHERE ciudad = 'Buenos Aires';
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -199,7 +186,7 @@ SELECT nombre, calle || ' ' || numero AS direccion
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **7. Cantidad de pacientes que viven en cada ciudad.**
 
@@ -210,20 +197,7 @@ SELECT ciudad, COUNT(*) AS cantidad
   ORDER BY cantidad DESC;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -275,7 +249,7 @@ SELECT ciudad, COUNT(*) AS cantidad
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **8 Cantidad de pacientes por sexo que viven en cada ciudad.** 
 
@@ -286,20 +260,7 @@ SELECT ciudad, descripcion, COUNT(*) AS cantidad
   GROUP BY ciudad, descripcion;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -336,7 +297,7 @@ SELECT ciudad, descripcion, COUNT(*) AS cantidad
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **9. Obtener la cantidad de recetas emitidas por cada médico** 
 
@@ -348,20 +309,7 @@ SELECT m.id_medico, nombre, COUNT(id_receta) AS cantidad
   ORDER BY cantidad DESC;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -468,7 +416,7 @@ SELECT m.id_medico, nombre, COUNT(id_receta) AS cantidad
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **10. Obtener todas las conultas médicas realizadas por el médico con ID igual a 3 en el mes de agosto de 2024** 
 
@@ -480,20 +428,7 @@ SELECT *
   AND EXTRACT(YEAR FROM DATE(fecha)) = 2024;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -545,7 +480,7 @@ SELECT *
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **11. Obtener el nombre de los pacientes junto con la fecha y el diagnóstico de todas las consultas médicas realizadas en agosto del 2024.**
 
@@ -557,20 +492,7 @@ SELECT c.id_consulta, p.nombre, c.fecha, c.diagnostico
   AND EXTRACT(YEAR FROM DATE(fecha)) = 2024;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -775,7 +697,7 @@ SELECT c.id_consulta, p.nombre, c.fecha, c.diagnostico
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **12. Obtener el nombre de los medicamentos prescritos más de una vez por el médico con ID igual a 2.**
 
@@ -788,20 +710,7 @@ SELECT m.nombre, r.id_medico, COUNT(r.id_receta)
   HAVING COUNT(r.id_receta) > 1;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -966,7 +875,7 @@ SELECT p.id_paciente, p.nombre, COUNT(r.id_receta) as cant_recetas
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **14. Obtener el nombre del medicamento más recetado junto con la cantidad de recetas emitidas para ese medicamento.**
 
@@ -977,20 +886,7 @@ SELECT p.nombre, MAX(c.fecha) AS ultima_consulta, c.diagnostico
   GROUP BY p.nombre, c.diagnostico;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1007,7 +903,7 @@ SELECT p.nombre, MAX(c.fecha) AS ultima_consulta, c.diagnostico
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **15. Obtener el nombre del paciente junto con la fecha de su última consulta y el diagnóstico asociado.**
 
@@ -1019,20 +915,7 @@ CREATE VIEW ultima_consulta AS
   GROUP BY p.nombre, c.diagnostico;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1105,7 +988,7 @@ CREATE VIEW ultima_consulta AS
   </tbody>
 </table>
 <p>61 rows × 2 columns</p>
-</div>
+
 
 **16. Obtener el nombre del médico junto con el nombre del paciente y el número total de consultas realizadas por cada médico para cada paciente, ordenado por médico y paciente  .** 
 
@@ -1118,20 +1001,7 @@ SELECT m.nombre AS nombre_medico, p.nombre AS nombre_paciente, COUNT(*) AS total
   ORDER BY m.nombre, p.nombre;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1462,7 +1332,7 @@ SELECT m.nombre AS nombre_medico, p.nombre AS nombre_paciente, COUNT(*) AS total
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **17 Obtener el nombre del medicamento junto con el total de recetas prescritas para ese medicamento, el nombre del médico que lo recetó y el nombre del paciente al que se le recetó, ordenado por total de recetas en orden descendente.**
 
@@ -1476,20 +1346,7 @@ SELECT m.nombre, COUNT(r.id_receta) AS total_recetas, med.nombre AS nombre_medic
   ORDER BY total_recetas DESC;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1688,7 +1545,7 @@ SELECT m.nombre, COUNT(r.id_receta) AS total_recetas, med.nombre AS nombre_medic
     </tr>
   </tbody>
 </table>
-</div>
+
 
 **18.  Obtener el nombre del médico junto con el total de pacientes a los que ha atendido, ordenado por el total de pacientes en orden descendente .**
 
@@ -1700,20 +1557,7 @@ SELECT Medicos.nombre AS nombre_medico, COUNT(DISTINCT Consultas.id_paciente) AS
   ORDER BY total_pacientes DESC;
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1800,4 +1644,4 @@ SELECT Medicos.nombre AS nombre_medico, COUNT(DISTINCT Consultas.id_paciente) AS
     </tr>
   </tbody>
 </table>
-</div>
+
