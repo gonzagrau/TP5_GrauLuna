@@ -9,34 +9,41 @@
 
 ### 1. ¿Qué tipo de base de datos es? 
 
-Respuesta : Para poder definir el tipo de base de datos primero debemos analizar el archivo y su formato.
+Respuesta: Para poder definir el tipo de base de datos primero debemos analizar el archivo y su formato.
 
-Observando en detalle el archivo "base_de_datos.sql" podemos notar que los datos se almacenan de manera organizada en tablas . Estas tablas se dividen en columnas que indican las diferentes caracteristicas de los datos y en filas que acen alusion a los diferentes registros dentro de una misma tabla.
+Observando en detalle el archivo "base_de_datos.sql" podemos notar que los datos se almacenan de manera organizada en tablas. Estas tablas se dividen en columnas que indican las diferentes características de los datos y en filas que hacen alusión a los diferentes registros dentro de una misma tabla.
 
-Además de esto se utilizan claves primarias (Primary Keys) y claves foraneas (Foriegn Keys). Por un lado las claves primarias garantinzan que cada registro en una tabla sea unico lo que asegura que no haya registro duplicados. Por otro lado la clave foranea permite crear relaciones entre las tablas. Por ejemplo en Pacientes, id_sexo es una clave foránea que se refiere a la tabla SexoBiologico. Esto ultimo es fundamental para poder establecer una relacion logica entre las 2 tablas
+Además de esto se utilizan claves primarias (Primary Keys) y claves foráneas (Foriegn Keys). Por un lado, las claves primarias garantizan que cada registro en una tabla sea único lo que asegura que no haya registro duplicados. Por otro lado, la clave foránea permite crear relaciones entre las tablas. Por ejemplo, en Pacientes, id_sexo es una clave foránea que se refiere a la tabla SexoBiologico. Esto último es fundamental para poder establecer una relación lógica entre las 2 tablas.
 
-Dado a estar razones, podemos definir que el archivo se trata d euna base de datos relacional dado a que las tablas establecen relaciones logicas una con las otras asociandose segun diferentes caracteristicas al usar de manera combinada las claves primarias y las claves foraneas
+Dado a estar razones, podemos definir que el archivo se trata de una base de datos relacional dado a que las tablas establecen relaciones lógicas una con las otras asociándose según diferentes características al usar de manera combinada las claves primarias y las claves foráneas.
+
 
 ### 2. Armar el diagrama entidad-relación de la base de datos dada. 
 
 ![diagrama_db](Imagenes/diagrama_db.jpg)
 
+El diagrama fue armado a mano usando la aplicación de Miro
+
 ### 3. Armar el Modelo relacional de la base de datos dada.
 
 ![modelo_relacional](Imagenes/modelo_relacional.png)
 
-
+El modelo relacional se armó en dbdiagram.io y se hizo de manera automática al exportar la base de datos a la 
+aplicación
 
 ### 4. Considera que la base de datos está normalizada. En caso que no lo esté, ¿cómo podría hacerlo?
 
 
-En este caso debemos analizar las diferentes tablas que se armaron ya que vamos notar algunas que se encuentran correctamente normalizadas mientras que otras podrian necesitar mejoras.
+En este caso debemos analizar las diferentes tablas que se armaron ya que vamos notar algunas que se encuentran correctamente normalizadas mientras que otras podrían necesitar mejoras.
 
-Por ejemplo, en el caso de la tabla "SexoBiologico" se encuentra correctamente normalizada. Esto se debe a que por un lado tenemos que se delimita los generos usando un id_sexo como primary key y designando los terminos "Masculino" y "Femenino". A su vez , gracias a las relaciones de la base de datos, en la tabla "Pacientes" cada uno de los registros tiene un id_sexo como clave foránea. Esto es sumamente util para la normalizacion ya que se evitan redundacias de informacion al sexo biologico ya que otro usuario podria ingresarlo bajo otro termino como "Hombre" y "Mujer" o cualquier otro caso pueda posible. Esto mismo pasa en muchas otras tablas estableciendo relaciones, otro buen ejemplo es el caso de la tabla especialidades y la tabla médicos.
+Por ejemplo, en el caso de la tabla "SexoBiologico" se encuentra correctamente normalizada. Esto se debe a que por un lado tenemos que se delimita los géneros usando un id_sexo como primary key y designando los términos "Masculino" y "Femenino". A su vez, gracias a las relaciones de la base de datos, en la tabla "Pacientes" cada uno de los registros tiene un id_sexo como clave foránea. Esto es sumamente útil para la normalización ya que se evitan redundancias de información al sexo biológico ya que otro usuario podría ingresarlo bajo otro termino como "Hombre" y "Mujer" o cualquier otro caso pueda posible. Esto mismo pasa en muchas otras tablas estableciendo relaciones, otro buen ejemplo es el caso de la tabla especialidades y la tabla médicos.
 
-Asimismo en la tabla de pacientes podemos encontrar ejemplos de atributos que necesitan de cierta normalización. Un claro caso de esto es el caso de ciudad en donde podemos ver varios registros que en esencia tienen el mismo valor de atributo pero al estar mal escrito (Bs Aires / buenos aires  / Buenos aires / etc) no se podrian analizar como el mismo valor. Al ser el atributo ciudad un valor el cual puede englobar a mas de uno paciente (algo que es mas dificil de hacer con datos puntuales como numero o fecha de nacimiento) se podria normalizar de la misma forma que se hace con id_sexo pero estableciendo esta vez un id_ciudad. A su vez , aunque no se encontraron errores, lo mismo ocurre para el caso de direcciones. En este caso tambien se podria usar un foreign key de id_direccion y seria una buena practica crear una tabla estas direcciones que se relacionan a su vez con un aclave foranea de id_ciudad ya que podria a ver una calle con el mismo nombre en ciudades diferentes. Estas relaciones permitirian un correcta normalizacion de estos atributos evitando errores de entradas y que los valores de estos atributos respeten una misma metodologia (lo que luego facilitara el uso de las herramientas de recoleccion de informacion como PowerBI).
+Asimismo, en la tabla de pacientes podemos encontrar ejemplos de atributos que necesitan de cierta normalización. Un claro caso de esto es el caso de ciudad en donde podemos ver varios registros que en esencia tienen el mismo valor de atributo, pero al estar mal escrito (Bs Aires / buenos aires / Buenos aires / etc) no se podrían analizar como el mismo valor. Al ser el atributo ciudad un valor el cual puede englobar a más de uno paciente (algo que es más difícil de hacer con datos puntuales como numero o fecha de nacimiento) se podría normalizar de la misma forma que se hace con id_sexo pero estableciendo esta vez un id_ciudad. A su vez, aunque no se encontraron errores, lo mismo ocurre para el caso de direcciones. En este caso también se podría usar un foreign key de id_direccion y sería una buena práctica crear una tabla estas direcciones que se relacionan a su vez con una clave foránea de id_ciudad ya que podría a ver una calle con el mismo nombre en ciudades diferentes. Estas relaciones permitirían un correcta normalización de estos atributos evitando errores de entradas y que los valores de estos atributos respeten una misma metodología (lo que luego facilitara el uso de las herramientas de recolección de información como PowerBI).
 
-Analizando el resto de tablas, otra tabla mas que quizas necesite de normalizacion es la del diagnostico en donde podria no normalizarse el atributo de diagnostico pero si el del codigo de Snomed. De esta manera más allá que el doctor pueda expresar un diagnostico en sus propias palabras , el id_snomed permitira una correcta normalización indicando un mismo diagnostico para todos.
+Analizando el resto de las tablas, otra tabla más que quizás necesite de normalización es la del diagnóstico en donde podría no normalizarse el atributo de diagnóstico, pero si el del código de Snomed. De esta manera más allá que el doctor pueda expresar un diagnóstico en sus propias palabras, el id_snomed permitirá una correcta normalización indicando un mismo diagnostico para todos.
+
+Un ultima cosa a mencionar relacionado con la normalización de datos es que por algún motivo hay un nombre diferente para la clave primaria (que a su vez es foránea en otra tabla) de id_especialidad. En la tabla de Especialidades aparece como id_especialidad y en la tabla de Médicos aparece como especialidad_id. Esto podría llegar a causar error y confusiones por lo cual sería optimo tener un nombre totalmente en común.
+
 
 ## **PARTE 2:** Bases de Datos
 
