@@ -22,14 +22,14 @@ Dado a estar razones, podemos definir que el archivo se trata de una base de dat
 
 ![diagrama_db](Imagenes/diagrama_db.jpg)
 
-El diagrama fue armado a mano usando la aplicación de Miro
+El diagrama fue armado a mano usando la aplicación de Miro.
 
 ### 3. Armar el Modelo relacional de la base de datos dada.
 
 ![modelo_relacional](Imagenes/modelo_relacional.png)
 
 El modelo relacional se armó en dbdiagram.io y se hizo de manera automática al exportar la base de datos a la 
-aplicación
+aplicación.
 
 ### 4. Considera que la base de datos está normalizada. En caso que no lo esté, ¿cómo podría hacerlo?
 
